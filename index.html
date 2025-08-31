@@ -28,20 +28,19 @@
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 bg-white text-zinc-900 px-3 py-2 rounded-md shadow">Skip to content</a>
   <div id="root"></div>
 
-  <!-- Inline YAML fallback. You can also pass ?data=<URL> to load external YAML. -->
   <script id="profile-yaml" type="text/yaml">
 name: Sayan Mandal
 title: Senior Machine Learning Engineer
-company: AMD
-location: Sunnyvale, CA
-avatar: ''
+company: Advanced Micro Devices (AMD)
+location: Sunnyvale, CA, USA
+avatar: assets/headshot.jpeg
 summary: >-
   Machine Learning Engineer specializing in applied AI, with recent experience in building and deploying scalable LLM-powered agents and multi-agent systems. My work focuses on advancing LLM capabilities and computer vision to address complex real-world challenges.
 interests:
-  - Large Language Models
+  - Generative AI & NLP
   - Computer Vision
+  - Advanced Learning Paradigms
   - Multimodal Systems
-  - Time-Series Analysis
 education:
   - degree: Ph.D. in Electrical & Computer Engineering
     school: Duke University (2019-2024)
@@ -53,28 +52,49 @@ contact:
   email: sayanmndl21@gmail.com
   linkedin: https://www.linkedin.com/in/sayan-mandal
   github: https://github.com/sayanmandal
-  orcid: '#'
-  cv_url: '#'
+  orcid: https://orcid.org/0000-0003-2700-4629?lang=en
+  cv_url: https://tinyurl.com/sayan-amdcv
 projects:
-  - title: DFC-VAE AutoEncoder for Glaucoma Detection
-    tech: [Python, PyTorch]
+  - title: LLM Agents for Code Generation & Analysis
+    tech: [Python, PyTorch, Multi-Agent Systems, RAG, LanceDB, KuzuDB, RL]
     description: >-
-      Developed a Deep Feature-Consistent Variational AutoEncoder to segment glaucoma biomarkers in fundus photos, achieving an ROC-AUC score of 0.9.
+      Led the design of a multi-agent orchestration platform to generate unit tests and system software. Directed the implementation, which boosted code coverage by over 80% through an event-driven architecture with advanced RAG; AMD, San Jose, CA.
     image: ''
-  - title: DFC-VAE2 temp AutoEncoder for Glaucoma Detection
-    tech: [Python, PyTorch]
+
+  - title: Fine-Tuned LLM for FuSa Code Review
+    tech: [PyTorch, Deepspeed, TRL, PEFT, FSDP, Transformers, Docker]
     description: >-
-      Developed a Deep Feature-Consistent Variational AutoEncoder to segment glaucoma biomarkers in fundus photos, achieving an ROC-AUC score of 0.9.
+      Architected a framework to evaluate functional safety (FuSa) compliance using fine-tuned LLMs[cite: 160]. [cite_start]Managed the entire pipeline, from scraping and annotating 100K+ GitHub patches [cite: 158] [cite_start]to orchestrating distributed fine-tuning on multi-GPU clusters[cite: 159]. [cite_start]This work drove a 70%+ improvement in compliance accuracy[cite: 162]; [cite_start]AMD, San Jose, CA[cite: 51, 153].
     image: ''
-  - title: Real-time Drone Detection System
-    tech: [Python, OpenCV, Librosa, PyMongo]
+
+  - title: Scalable LLM Inference Server
+    tech: [Ray Serve, FastAPI, RabbitMQ, vLLM, LlamaCPP, Docker, Triton]
     description: >-
-      Deployed a drone detection system on a Raspberry Pi 3B+, achieving 87% accuracy at 35m using real-time audio feature extraction and reducing latency to 0.5s.
+      Oversaw the scalable deployment of a containerized LLM inference server to automate CI/CD workflows and improve productivity for multiple internal teams[cite: 161, 163]; [cite_start]AMD, San Jose, CA[cite: 51, 153].
     image: ''
-  - title: Sentiment Classification for IMDB Reviews
-    tech: [Python, TensorFlow]
+
+  - title: Glaucoma Progression Detection
+    tech: [PyTorch, OpenCV, Scikit-learn, CNN, LSTM]
     description: >-
-      Developed LSTM classifiers to determine the polarity of IMDB movie reviews, achieving 87% accuracy through feature engineering and synthetic data generation.
+      Developed a contrastive learning model to detect glaucoma progression in time-series data[cite: 167]. [cite_start]Designed a weakly supervised CNN-LSTM model to handle noisy labels, achieving a 0.89 ROC-AUC and improving overall detection by 85%[cite: 168, 170]; [cite_start]Duke University, Durham, NC[cite: 149, 165].
+    image: ''
+
+  - title: ASR Error Correction for Alexa
+    tech: [PySpark, Hugging Face, AWS, Seq2Seq]
+    description: >-
+      Developed a BART-Large Seq2Seq classifier to identify and apply ASR error corrections for Alexa searches[cite: 76, 176]. [cite_start]This work improved ASR correction quality by 16%, resulting in an additional 2.2 million corrections per month[cite: 80, 179]; [cite_start]Amazon, Boston, MA[cite: 75, 174].
+    image: ''
+
+  - title: DFC-VAE for Severe Glaucoma Detection
+    tech: [Python, PyTorch, VAE, SVM]
+    description: >-
+      Developed a Deep Feature Consistent Variational Autoencoder (DFC-VAE) to segment glaucoma biomarkers in fundus photos[cite: 183]. [cite_start]The model's features achieved an ROC-AUC score of 0.9 when classified using a Support Vector Classifier[cite: 184].
+    image: ''
+
+  - title: Real-Time Acoustic Drone Detection
+    tech: [Python, OpenCV, Librosa, SVM, RaspberryPi]
+    description: >-
+      Developed and deployed a real-time drone detection system on a Raspberry Pi that achieved 87% accuracy at 35m using audio signal processing and machine learning[cite: 103, 186]. [cite_start]Integrated custom audio feature extraction, which reduced detection latency from 2s to 0.5s[cite: 187]; [cite_start]Duke University, Durham, NC[cite: 102].
     image: ''
 experience:
   - role: Senior Machine Learning Engineer
@@ -318,8 +338,8 @@ publications:
         <Container>
           <div className="grid md:grid-cols-3 gap-10 items-center">
             <div className="flex flex-col items-center text-center">
-              <img loading="lazy" width="160" height="160" src={data?.avatar || 'https://placehold.co/400x400/e2e8f0/0f172a?text=S.M.'} alt={`Portrait of ${data?.name || 'Profile'}`} className="rounded-full w-40 h-40 mb-4 border-4 border-slate-600 shadow" />
-              <h1 className="text-3xl font-extrabold text-slate-100">{data?.name}</h1>
+              <img loading="lazy" width="400" height="400" src={data?.avatar || 'https://placehold.co/400x400/e2e8f0/0f172a?text=S.M.'} alt={`Portrait of ${data?.name || 'Profile'}`} className="rounded-full w-56 h-56 mb-4 border-4 border-slate-600 shadow" />
+              <h1 className="text-3xl font text-slate-100">{data?.name}</h1>
               <p className="text-slate-300">{data?.title}</p>
               <p className="text-slate-400 text-sm">{data?.company}</p>
               <p className="text-slate-400 text-sm mt-1">{data?.location}</p>
@@ -632,4 +652,3 @@ publications:
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </body>
 </html>
-
